@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonsai Residences | Branded Residences by Ashizawa</title>
+    <meta name="description" content="Discover Bonsai Residences - where Japanese design philosophy meets luxury living in Riyadh. Designed by renowned architect Keiji Ashizawa.">
+    <link rel="icon" type="image/png" href="https://images.squarespace-cdn.com/content/v1/687e6fecc1541a12c017e920/d70c0e86-0b76-4067-a425-1b2ea1d0d231/Bonsai+-+ENG+Logo-01.png">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #8b7355;
+            --primary-dark: #6d5a44;
+            --secondary: #d4c4b0;
+            --background: #faf9f7;
+            --foreground: #2c2520;
+            --muted: #ebe6df;
+            --muted-foreground: #6b6258;
+            --accent: #a8927a;
+            --border: #d9d1c7;
+            --card: #ffffff;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--foreground);
+            background-color: var(--background);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(250, 249, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        nav a {
+            position: relative;
+            padding: 0.5rem 0;
+            font-weight: 500;
+            color: var(--foreground);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--foreground);
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--muted-foreground);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.125rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-top: 0;
+            padding-top: 80px;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-text {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+        
+        /* Card */
+        .card {
+            background: var(--card);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            transform: translateY(-4px);
+        }
+        
+        .card-image {
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .card:hover .card-image img {
+            transform: scale(1.1);
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .card-description {
+            color: var(--muted-foreground);
+        }
+        
+        /* Button */
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 115, 85, 0.3);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Background Variants */
+        .bg-muted {
+            background-color: var(--muted);
+        }
+        
+        .bg-secondary {
+            background-color: var(--secondary);
+        }
+        
+        /* Video Container */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Two Column Layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        /* Feature List */
+        .feature-list {
+            list-style: none;
+        }
+        
+        .feature-list li {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: var(--muted-foreground);
+        }
+        
+        .feature-list .icon {
+            color: var(--primary);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-description {
+            color: var(--muted-foreground);
+        }
+        
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 1rem;
+        }
+        
+        .team-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover .team-avatar img {
+            transform: scale(1.1);
+        }
+        
+        .team-name {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-role {
+            color: var(--primary);
+            font-size: 0.875rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .team-company {
+            color: var(--muted-foreground);
+            font-size: 0.875rem;
+        }
+        
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        /* Brochure Section */
+        .brochure-preview {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .brochure-cover {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            margin-bottom: 2rem;
+        }
+        
+        .brochure-cover img {
+            width: 100%;
+            height: auto;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--foreground);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.social-links .icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+/* Platform Colors */
+.icon.instagram { background: #E1306C; }
+.icon.twitter { background: #1DA1F2; }
+.icon.linkedin { background: #0077b5; }
+.icon.whatsapp { background: #25D366; }
+
+/* Hover Animation */
+.social-links .icon:hover {
+    transform: scale(1.15);
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+}
+
+        
+        /*.social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }*/
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                display: none;
+            }
+            
+            nav.active {
+                display: block;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--background);
+                border-bottom: 1px solid var(--border);
+                padding: 1rem;
+            }
+            
+            nav.active ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+  
+    </style>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="#home" class="logo">
+                <img src="https://images.squarespace-cdn.com/content/v1/687e6fecc1541a12c017e920/d70c0e86-0b76-4067-a425-1b2ea1d0d231/Bonsai+-+ENG+Logo-01.png?format=1500w" alt="Bonsai Residences">
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#designer">Designer</a></li>
+                    <li><a href="#serenity">Serenity</a></li>
+                    <li><a href="#project">Project</a></li>
+                    <li><a href="#brochure">Brochure</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+  
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <img src="bg image.png" alt="Oasis of Serenity">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Oasis of Serenity</h1>
+            <p class="hero-text">Experience the philosophy of bonsai translated into living spaces designed with intention</p>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="bg-muted">
+        <div class="container">
+            <div class="two-col">
+                <div>
+                    <img src="Philosophy.png" alt="Bonsai Philosophy">
+                </div>
+                <div>
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">Bonsai Philosophy</h2>
+                    <p style="margin-bottom: 1.5rem; color: var(--muted-foreground); font-size: 1.125rem;">
+                        Bonsai philosophy enables us to see beauty in simplicity. It reveals crafted spaces within limited dimensions, teaching serenity, mindfulness, and harmony. We bring this philosophy to life in spaces designed with intelligence.
+                    </p>
+                    <p style="margin-bottom: 2rem; color: var(--muted-foreground);">
+                        Every corner is an invitation to find value in compact yet profound experiences. Bonsai — an oasis of tranquility.
+                    </p>
+                    <a href="#serenity" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Designer Section -->
+    <section id="designer">
+        <div class="container">
+            <h2 class="section-title">Designer</h2>
+            <p class="section-subtitle">
+                Renowned Japanese architect and designer bringing world-class craftsmanship to Bonsai Residences
+            </p>
+            <div class="two-col">
+                <div>
+                    <img src="Desigener.jpg" alt="Keiji Ashizawa" style="border-radius: 8px;">
+                </div>
+                <div>
+                    <h3 style="font-size: 2rem; margin-bottom: 1.5rem;">Design Philosophy</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--muted-foreground); line-height: 1.8;">
+                        Keiji Ashizawa is celebrated for his minimalist approach that honors traditional Japanese aesthetics while embracing contemporary functionality. His work is characterized by honest materials, precise proportions, and spaces that invite contemplation.
+                    </p>
+                    <p style="margin-bottom: 1.5rem; color: var(--muted-foreground); line-height: 1.8;">
+                        At Bonsai Residences, Ashizawa brings his philosophy of "design with intelligence" — creating environments where every element serves both purpose and beauty, resulting in living spaces that nurture the soul.
+                    </p>
+                    <ul class="feature-list">
+                        <li><span class="icon">✓</span> <span>Award-winning international architect</span></li>
+                        <li><span class="icon">✓</span> <span>Specialist in residential and hospitality design</span></li>
+                        <li><span class="icon">✓</span> <span>Philosophy rooted in Japanese minimalism</span></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Added designer video section with correct YouTube video ID -->
+            <!-- Meet the Designer Section -->
+<!-- Meet the Designer Section with YouTube Red Icon -->
+<section id="designer-video">
+    <div class="container">
+        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center;">Meet the Designer</h3>
+        <div style="max-width: 900px; margin: 0 auto;">
+            <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px;">
+                <a href="https://youtu.be/2Di2M-psck4" target="_blank" style="position: absolute; inset: 0; display: block;">
+                    <!-- High-res Thumbnail -->
+                    <img src="https://img.youtube.com/vi/2Di2M-psck4/maxresdefault.jpg" 
+                         alt="Meet the Designer Video" 
+                         style="width: 100%; height: 100%; object-fit: cover; display: block;">
+
+                    <!-- YouTube Red Icon Overlay -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" 
+                         alt="Play Video" 
+                         style="
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            width: 80px;
+                            height: 80px;
+                            opacity: 0.9;
+                         ">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Serenity Video Section -->
+    <!-- Serenity Video Section -->
+<section id="serenity" class="bg-secondary">
+    <div class="container">
+        <h2 class="section-title">Serenity</h2>
+        <p class="section-subtitle">
+            Discover how serenity at Bonsai transforms into a sensory experience filled with tranquility and quiet beauty
+        </p>
+        <div style="max-width: 900px; margin: 0 auto;">
+            <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px;">
+                <a href="https://youtu.be/ji2qfRRIdlg" target="_blank" style="position: absolute; inset: 0; display: block;">
+                    <!-- High-res Thumbnail -->
+                    <img src="https://img.youtube.com/vi/ji2qfRRIdlg/maxresdefault.jpg" 
+                         alt="Serenity Video" 
+                         style="width: 100%; height: 100%; object-fit: cover; display: block;">
+
+                    <!-- YouTube Red Icon Overlay -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" 
+                         alt="Play Video" 
+                         style="
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            width: 80px;
+                            height: 80px;
+                            opacity: 0.9;
+                         ">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Oasis of Serenity -->
+    <!-- <section>
+        <div class="container">
+            <h2 class="section-title">Oasis of Serenity</h2>
+            <p class="section-subtitle" style="max-width: 900px;">
+                Our spaces are meticulously designed to offer a peaceful escape from the noise of the city — where calm becomes a language that speaks to every part of you. Japanese designer Keiji Ashizawa believes that true serenity is felt through the senses.
+            </p>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <img src="Oasis of Serenity1.jpg" alt="Oasis of Serenity" style="border-radius: 8px;">
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Project Amenities -->
+    <section id="project" class="bg-muted">
+        <div class="container">
+            <h2 class="section-title">Project Amenities</h2>
+            <div class="grid grid-3">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="luxury-infinity-swimming-pool-lounge-deck.jpg" alt="Swimming Pool">
+                    </div>
+                    <h3 class="card-title">Swimming Pool</h3>
+                    <p class="card-description">Temperature-controlled infinity pool with lounge area</p>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="modern-luxury-gym-fitness-center-equipment.jpg" alt="Fitness Center">
+                    </div>
+                    <h3 class="card-title">Fitness Center</h3>
+                    <p class="card-description">State-of-the-art equipment and personal training</p>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="peaceful-yoga-meditation-studio-natural-light.jpg" alt="Yoga Studio">
+                    </div>
+                    <h3 class="card-title">Yoga Studio</h3>
+                    <p class="card-description">Serene space for meditation and wellness</p>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="landscaped-garden-walking-path-trees-residential.jpg" alt="Green Spaces">
+                    </div>
+                    <h3 class="card-title">Green Spaces</h3>
+                    <p class="card-description">Landscaped gardens and walking paths</p>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="Family Area.jpg" alt="Family Area">
+                    </div>
+                    <h3 class="card-title">Family Area</h3>
+                    <p class="card-description">Safe play zones for children</p>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="modern-cafe-lounge-social-space-interior-design.jpg" alt="Café Lounge">
+                    </div>
+                    <h3 class="card-title">Café Lounge</h3>
+                    <p class="card-description">Social gathering space with refreshments</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attractive Investment -->
+    <section class="bg-secondary">
+        <div class="container">
+            <h2 class="section-title">Attractive Investment</h2>
+            <div class="two-col" style="margin-bottom: 3rem;">
+                <div>
+                    <img src="Attractive Investment .png" alt="Investment Opportunity" style="border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
+                </div>
+                <div>
+                    <h3 style="font-size: 2rem; margin-bottom: 1.5rem;">Prime Investment Opportunity</h3>
+                    <p style="color: var(--muted-foreground); line-height: 1.8; margin-bottom: 2rem;">
+                        Bonsai Residences presents an exceptional investment case in one of Riyadh's most dynamic districts. With strategic location, designer credentials, and premium amenities, the project offers strong appreciation potential.
+                    </p>
+                    <ul class="feature-list">
+                        <li><span class="icon">✓</span> <span>High Growth Area - Located in rapidly developing district</span></li>
+                        <li><span class="icon">✓</span> <span>Designer Premium - Keiji Ashizawa's reputation adds value</span></li>
+                        <li><span class="icon">✓</span> <span>Rental Income - Strong demand in premium segment</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="stats">
+                <div class="card">
+                    <div class="stat-number">15-20%</div>
+                    <div class="stat-label">Annual Appreciation</div>
+                    <p class="stat-description">Expected growth rate</p>
+                </div>
+                <div class="card">
+                    <div class="stat-number">8-10%</div>
+                    <div class="stat-label">Rental Yield</div>
+                    <p class="stat-description">Projected returns</p>
+                </div>
+                <div class="card">
+                    <div class="stat-number">2025</div>
+                    <div class="stat-label">Delivery</div>
+                    <p class="stat-description">ROI start date</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Metro Proximity -->
+    <!-- <section class="bg-secondary">
+        <div class="container">
+            <h2 class="section-title">Metro Proximity</h2>
+            <p class="section-subtitle">
+                Our exceptional location makes the entire city within your reach. At the heart of movement and connectivity, Bonsai offers seamless access with the ease that mirrors the serenity within.
+            </p>
+            <div style="max-width: 900px; margin: 0 auto;">
+                <img src="riyadh-metro-map-proximity-bonsai-location.jpg" alt="Metro Map" style="border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
+            </div>
+        </div>
+    </section>
+
+    <!-- Vibrant Location -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Vibrant Location</h2>
+            <p class="section-subtitle">
+                Everything you need is just minutes away from Bonsai
+            </p>
+            
+           <div style="width: 100%; margin-bottom: 3rem;">
+    <div style="
+        position: relative;
+        width: 100%;
+        height: 500px;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    ">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2675.152085391689!2d46.8076096!3d24.7445061!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f010e5b092665%3A0x5cfb850ccf2930a4!2zQm9uc2FpIHwg2KjZiNmG2LPYp9mKINin2YTYudmC2KfYsdmK2Kk!5e1!3m2!1sen!2sbd!4v1763804433897!5m2!1sen!2sbd"
+            style="border:0; width:100%; height:100%;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</div>
+
+            
+            <div class="grid grid-3">
+                <div class="card">
+                    <div style="display: flex; align-items: start; gap: 0.75rem; margin-bottom: 0.75rem;">
+                        <span style="color: var(--primary); font-weight: bold;">2 min</span>
+                        <h3 style="font-weight: 500;">Mama Noura</h3>
+                    </div>
+                    <p style="font-size: 0.875rem; color: var(--muted-foreground);">Restaurant</p>
+                </div>
+                <div class="card">
+                    <div style="display: flex; align-items: start; gap: 0.75rem; margin-bottom: 0.75rem;">
+                        <span style="color: var(--primary); font-weight: bold;">3 min</span>
+                        <h3 style="font-weight: 500;">Bait Al Shawarma</h3>
+                    </div>
+                    <p style="font-size: 0.875rem; color: var(--muted-foreground);">Restaurant</p>
+                </div>
+                <div class="card">
+                    <div style="display: flex; align-items: start; gap: 0.75rem; margin-bottom: 0.75rem;">
+                        <span style="color: var(--primary); font-weight: bold;">5 min</span>
+                        <h3 style="font-weight: 500;">Metro Station</h3>
+                    </div>
+                    <p style="font-size: 0.875rem; color: var(--muted-foreground);">Public Transport</p>
+                </div>
+                <div class="card">
+                    <div style="display: flex; align-items: start; gap: 0.75rem; margin-bottom: 0.75rem;">
+                        <span style="color: var(--primary); font-weight: bold;">8 min</span>
+                        <h3 style="font-weight: 500;">Shopping Mall</h3>
+                    </div>
+                    <p style="font-size: 0.875rem; color: var(--muted-foreground);">Retail</p>
+                </div>
+                <div class="card">
+                    <div style="display: flex; align-items: start; gap: 0.75rem; margin-bottom: 0.75rem;">
+                        <span style="color: var(--primary); font-weight: bold;">10 min</span>
+                        <h3 style="font-weight: 500;">King Salman Park</h3>
+                    </div>
+                    <p style="font-size: 0.875rem; color: var(--muted-foreground);">Recreation</p>
+                </div>
+                <div class="card">
+                    <div style="display: flex; align-items: start; gap: 0.75rem; margin-bottom: 0.75rem;">
+                        <span style="color: var(--primary); font-weight: bold;">12 min</span>
+                        <h3 style="font-weight: 500;">KAFD</h3>
+                    </div>
+                    <p style="font-size: 0.875rem; color: var(--muted-foreground);">Business District</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Masterplan -->
+    <section class="bg-muted">
+        <div class="container">
+            <h2 class="section-title">Masterplan</h2>
+            <div style="max-width: 100%; margin: 0 auto;">
+                <img src="Masterplan.png" alt="Masterplan" style="border-radius: 8px; margin-bottom: 2rem;">
+                <div style="text-align: center;">
+                    <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Phase 1</h3>
+                    <p style="color: var(--muted-foreground); max-width: 700px; margin: 0 auto; line-height: 1.8;">
+                        The first phase comprises carefully planned residential units arranged to maximize natural light, privacy, and community interaction — all while maintaining the serene atmosphere that defines Bonsai.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Our Team</h2>
+            <p class="section-subtitle">
+                Behind Bonsai stands a strategic alliance of leading specialized companies — each a pioneer in its field united by a shared vision
+            </p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <img src="Desigener.jpg" alt="Keiji Ashizawa">
+                    </div>
+                    <h3 class="team-name">Keiji Ashizawa</h3>
+                    <p class="team-role">Lead Designer</p>
+                    <p class="team-company">Keiji Ashizawa Design</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <img src="construction-management-team.jpg" alt="Development Team">
+                    </div>
+                    <h3 class="team-name">Development Team</h3>
+                    <p class="team-role">Project Development</p>
+                    <p class="team-company">Bonsai Development</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <img src="construction-management-team.jpg" alt="Construction Partners">
+                    </div>
+                    <h3 class="team-name">Construction Partners</h3>
+                    <p class="team-role">Construction Management</p>
+                    <p class="team-company">Leading Contractors</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <img src="interior-design-team-professional.jpg" alt="Interior Design">
+                    </div>
+                    <h3 class="team-name">Interior Design</h3>
+                    <p class="team-role">Interior Specialists</p>
+                    <p class="team-company">Ashizawa Studio</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <img src="landscape-architect-team.jpg" alt="Landscape Design">
+                    </div>
+                    <h3 class="team-name">Landscape Design</h3>
+                    <p class="team-role">Landscape Architecture</p>
+                    <p class="team-company">Garden Specialists</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <img src="sales-marketing-team-professional.jpg" alt="Sales & Marketing">
+                    </div>
+                    <h3 class="team-name">Sales & Marketing</h3>
+                    <p class="team-role">Client Relations</p>
+                    <p class="team-company">Bonsai Marketing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+     <!-- Gallery -->
+    <section class="bg-muted">
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="luxury-interior-design-modern-minimalist-space-.jpg" alt="Gallery 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="luxury-interior-design-modern-minimalist-space-.jpg" alt="Gallery 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="luxury-interior-design-modern-minimalist-space-.jpg" alt="Gallery 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="luxury-interior-design-modern-minimalist-space-.jpg" alt="Gallery 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="luxury-interior-design-modern-minimalist-space-.jpg" alt="Gallery 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="luxury-interior-design-modern-minimalist-space-.jpg" alt="Gallery 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brochure Section -->
+   
+<!-- Brochure Section -->
+<section id="brochure">
+    <div class="container">
+        <h2 class="section-title">Project Brochure</h2>
+        <p class="section-subtitle">
+            Download our comprehensive brochure to explore Bonsai Residences in detail
+        </p>
+        <div class="brochure-preview">
+            <div class="brochure-cover">
+                <img src="luxury-real-estate-brochure-cover-bonsai-residence.jpg" alt="Bonsai Residences Brochure">
+            </div>
+            <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Bonsai Residences Brochure</h3>
+            <p style="color: var(--muted-foreground); margin-bottom: 2rem; line-height: 1.8;">
+                Discover the complete vision of Bonsai Residences. Our detailed brochure includes floor plans, amenities, location advantages, investment opportunities, and the design philosophy behind this exceptional project by Keiji Ashizawa.
+            </p>
+            <a href="luxury-real-estate-brochure-bonsai-residence.pdf" 
+               download="Bonsai_Residences_Brochure.pdf" 
+               class="btn" 
+               style="font-size: 1.125rem; padding: 1rem 2.5rem;">
+                Download Brochure (PDF)
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+         
+
+
+
+<style>
+  :root{
+    --bg:#f7f3ec;
+    --accent:#2e241f; /* dark brown */
+    --muted:#faf9f7;
+    --input-border:rgba(46,36,31,0.9);
+  }
+
+  html,body{
+    height:100%;
+    margin:0;
+   /* font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;*/
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background:var(--bg);
+    color:var(--accent);
+  }
+
+  /* Outer layout */
+.page{
+    min-height:100vh;
+    display:flex;
+    align-items:stretch;
+    gap:40px;
+    padding:60px 80px;
+    box-sizing:border-box;
+    flex-wrap: wrap; /* allow wrapping on small screens */
+}
+
+/* Two columns */
+.left {
+    flex:1 1 300px; /* grows/shrinks with min width */
+    padding-right:40px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+}
+
+.right {
+    flex:1 1 300px; /* responsive width */
+    width:560px;
+    max-width:100%;
+    box-sizing:border-box;
+    border: 8px double black;
+    padding: 50px 20px 20px 20px;
+    border-radius: 15px;
+}
+
+/* Global reset for responsive layout */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Responsive media queries */
+@media (max-width: 1024px) {
+  .container, section {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .row, .columns {
+    flex-direction: column !important;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  input, button {
+    width: 100% !important;
+  }
+}
+
+
+
+/* Responsive adjustments */
+
+/* Tablet (≤1000px) */
+@media (max-width:1000px){
+    .page{
+        padding:40px;
+        flex-direction:column; /* stack columns */
+        gap:30px;
+    }
+    .right{
+        width:100%;
+        max-width:none;
+        margin-top:20px;
+        padding:40px 20px 20px 20px;
+    }
+    .headline{
+        font-size:2.5rem;
+    }
+}
+
+/* Mobile (≤600px) */
+@media (max-width:600px){
+    .page{
+        padding:15px;
+        gap:20px;
+        flex-direction:column; /* stack columns vertically */
+    }
+    .left, .right {
+        flex: 1 1 100%;
+        max-width: 100%;
+        padding: 15px 10px; /* reduce padding for mobile */
+        box-sizing: border-box;
+    }
+    .headline{
+        font-size:1.8rem;
+        margin-bottom:15px;
+    }
+    .input, textarea{
+        width: 100%;
+        padding:12px 15px;
+        font-size:14px;
+    }
+    .btn-send{
+        width: 100%;
+        padding:12px 0;
+        font-size:16px;
+        text-align:center;
+    }
+    .options{
+        flex-direction: column; /* stack checkboxes vertically */
+        gap:10px;
+    }
+}
+
+
+  /* Headline */
+  .headline{
+    /*font-family: "Playfair Display", serif;*/
+     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight:800;
+    font-size:3rem;
+    line-height:0.9;
+    margin:10px 0 30px 0;
+    letter-spacing:-2px;
+    color:var(--accent);
+  }
+
+  /* Intro text */
+  .intro{
+    max-width:520px;
+    color:#111111;
+    font-size:16px;
+    line-height:1.7;
+    margin-top:12px;
+  }
+
+  /* Form styling */
+  form{
+    display:block;
+  }
+  label.field-label{
+    display:block;
+    font-size:14px;
+    color:var(--accent);
+    margin-bottom:8px;
+    font-weight:500;
+  }
+
+
+  .input, textarea{
+    width:100%;
+    box-sizing:border-box;
+    padding:20px 26px;
+    border-radius:30px;
+    border:2px solid var(--input-border);
+    background:transparent;
+    outline:none;
+    font-size:16px;
+    color:var(--accent);
+    -webkit-appearance:none;
+    appearance:none;
+  }
+
+  textarea{
+    border-radius:22px;
+    min-height:140px;
+    resize:vertical;
+    padding:22px;
+  }
+
+  .form-group{
+    margin-bottom:22px;
+  }
+
+  /* Check groups (Unit Type, Objective, Payment) */
+  .options{
+    display:flex;
+    flex-wrap:wrap;
+    gap:18px 26px;
+    margin-top:6px;
+  }
+
+  .option{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:14px;
+    text-transform:uppercase;
+    letter-spacing:0.6px;
+    color:var(--accent);
+  }
+
+  /* Custom square checkbox */
+  .option input[type="checkbox"]{
+    width:18px;
+    height:18px;
+    appearance:none;
+    -webkit-appearance:none;
+    border:2px solid var(--input-border);
+    border-radius:4px;
+    display:inline-block;
+    position:relative;
+    cursor:pointer;
+    background:transparent;
+  }
+
+  .option input[type="checkbox"]:checked{
+    background:var(--accent);
+    border-color:var(--accent);
+  }
+
+  /* small checkmark using pseudo-element */
+  .option input[type="checkbox"]:checked::after{
+    content:"";
+    position:absolute;
+    left:4px;
+    top:1px;
+    width:5px;
+    height:9px;
+    border: solid white;
+    border-width:0 2px 2px 0;
+    transform:rotate(45deg);
+  }
+
+  /* SEND button */
+  .btn-send{
+    display:inline-block;
+    margin-top:18px;
+    padding:18px 40px;
+    border-radius:40px;
+    background:var(--accent);
+    color: #fff;
+    border:none;
+    font-size:16px;
+    letter-spacing:0.6px;
+    cursor:pointer;
+    box-shadow:none;
+  }
+
+  /* small required text */
+  .required{
+    color:red;
+    font-size:13px;
+    margin-left:8px;
+    font-weight:400;
+  }
+
+  /* mimic the rounded big input outlines like the design by adding border-radius to wrappers */
+  .inputs-stack{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+
+  /* Align the form labels on the left of their controls */
+  .form-row{
+    display:block;
+  }
+
+  /* Responsive */
+@media (max-width:600px){
+  .page {
+    width: 100vw !important;
+    max-width: 100vw !important;
+  }
+}
+
+    .right{
+      width:100%;
+      margin-top:20px;
+    }
+   @media (max-width:600px){
+    html, body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .container,
+    .page,
+    section,
+    .right,
+    .left,
+    .hero,
+    footer {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .page {
+        padding: 20px !important;
+        gap: 10px;
+    }
+
+    .right {
+        padding: 20px !important;
+        border-width: 4px !important;
+    }
+}
+
+
+  /* include screenshot reference (hidden) per instruction - you can remove this in production */
+  .design-screenshot{
+    display:none;
+  }
+</style>
+
+<div class="page">
+  <div class="left">
+    <h1 class="headline">Contact Us</h1> <br>
+    <h2>NAHDAH DISTRICT</h2>
+    <h2>RIYADH - SAUDI ARABIA</h2>
+    <br>
+    <br>
+    <br>
+
+     <h3>FAL LICENSE &nbsp;&nbsp;&nbsp;&nbsp;    1200019448</h3> 
+     <h3>AD LICENSE   &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 7200666566</h3> 
+     <h3>WAFI LICENSE &nbsp;&nbsp;  47/439</h3>   
+
+    <!-- <p class="intro">
+      Interested in learning more about Bonsai? Fill out some info and we will be in touch shortly. We can't wait to hear from you!
+    </p> -->
+  </div>
+
+    <div class="right">
+  <form id="contactForm" action="send-mail.php" method="POST" novalidate>
+
+    <div class="form-row form-group">
+      <label class="field-label" for="name">Full Name <span class="required">(required)</span></label>
+      <input id="name" name="name" class="input" type="text" required>
+    </div>
+
+    <div class="form-row form-group">
+      <label class="field-label" for="mobile">Mobile Number <span class="required">(required)</span></label>
+      <input id="mobile" name="mobile" class="input" type="tel" required>
+    </div>
+    <div class="form-row form-group">
+  <label class="field-label" for="email">Email Address <span class="required">(required)</span></label>
+  <input id="email" name="email" class="input" type="email" required>
+</div>
+    <div class="form-row form-group">
+      <label class="field-label">Unit Type <span class="required">(required)</span></label>
+      <div class="options">
+        <label class="option"><input type="checkbox" name="unit[]" value="STUDIO"> STUDIO</label>
+        <label class="option"><input type="checkbox" name="unit[]" value="2 BED APARTMENT"> 2 BED APARTMENT</label>
+        <label class="option"><input type="checkbox" name="unit[]" value="3 BED APARTMENT"> 3 BED APARTMENT</label>
+      </div>
+    </div>
+
+    <div class="form-row form-group">
+      <label class="field-label">Objective <span class="required">(required)</span></label>
+      <div class="options">
+        <label class="option"><input type="checkbox" name="objective[]" value="LIVE"> LIVE</label>
+        <label class="option"><input type="checkbox" name="objective[]" value="INVEST"> INVEST</label>
+      </div>
+    </div>
+
+    <div class="form-row form-group">
+      <label class="field-label">Payment <span class="required">(required)</span></label>
+      <div class="options">
+        <label class="option"><input type="checkbox" name="payment[]" value="CASH (PRIORITY)"> CASH (PRIORITY)</label>
+        <label class="option"><input type="checkbox" name="payment[]" value="INSTALLMENTS"> INSTALLMENTS</label>
+      </div>
+      
+    </div>
+
+    <div class="form-row form-group">
+      <label class="field-label" for="message">Message <span class="required">(required)</span></label>
+      <textarea id="message" name="message" required></textarea>
+    </div>
+
+    <!-- Google reCAPTCHA -->
+    <div class="g-recaptcha" data-sitekey="6LcKNBYsAAAAAJ8LdUcfBfRp4Oz6vB5FepYu8Qh4"></div>
+
+    <!-- Message area -->
+    <div id="formMessage" style="margin-top:15px;"></div>
+
+    <button class="btn-send" type="submit">SEND</button>
+    
+  </form>
+</div>
+
+
+<!-- reCAPTCHA Script -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault(); // prevent default page reload
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    // Clear previous messages
+    const messageDiv = document.getElementById('formMessage');
+    messageDiv.innerHTML = '';
+
+    // Manually check required fields
+    const name = form.querySelector('#name').value.trim();
+    const mobile = form.querySelector('#mobile').value.trim();
+    const message = form.querySelector('#message').value.trim();
+
+    // Check checkboxes (Unit, Objective, Payment)
+    const unitChecked = form.querySelectorAll('input[name="unit[]"]:checked').length;
+    const objectiveChecked = form.querySelectorAll('input[name="objective[]"]:checked').length;
+    const paymentChecked = form.querySelectorAll('input[name="payment[]"]:checked').length;
+
+    if(!name){
+        alert("Please enter your Full Name.");
+        form.querySelector('#name').focus();
+        return;
+    }
+
+    if(!mobile){
+        alert("Please enter your Mobile Number.");
+        form.querySelector('#mobile').focus();
+        return;
+    }
+    
+   /* if(!email){
+        alert("Please enter your email.");
+        form.querySelector('#email').focus();
+        return;
+*/
+    if(!unitChecked){
+        alert("Please select at least one Unit Type.");
+        return;
+    }
+
+    if(!objectiveChecked){
+        alert("Please select at least one Objective.");
+        return;
+    }
+
+    if(!paymentChecked){
+        alert("Please select at least one Payment Method.");
+        return;
+    }
+
+    if(!message){
+        alert("Please enter your Message.");
+        form.querySelector('#message').focus();
+        return;
+    }
+
+    // Check reCAPTCHA
+    if(grecaptcha.getResponse().length === 0){
+        alert("Please verify the reCAPTCHA.");
+        return;
+    }
+
+    // Send form using fetch
+    fetch(form.action, {
+        method: form.method,
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        if(data.trim() === "Success"){
+            messageDiv.innerHTML = "<p style='color:green;'>Thank you! Your message has been sent.</p>";
+            form.reset();
+            grecaptcha.reset(); // reset reCAPTCHA
+        } else {
+            messageDiv.innerHTML = "<p style='color:red;'>" + data + "</p>";
+        }
+    })
+    .catch(error => {
+        messageDiv.innerHTML = "<p style='color:red;'>An error occurred. Please try again later.</p>";
+        console.error('Error:', error);
+    });
+});
+</script>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h4 class="footer-title">Bonsai Residences</h4>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">
+                        Branded residences by renowned Japanese architect Keiji Ashizawa. Where Japanese design philosophy meets luxury living in Riyadh.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#designer">Designer</a></li>
+                        <li><a href="#serenity">Serenity</a></li>
+                        <li><a href="#project">Project</a></li>
+                        <li><a href="#brochure">Brochure</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><i class="fa-solid fa-location-crosshairs"></i> Riyadh, Saudi Arabia</li>
+                        <li><i class="fa-solid fa-message"></i> info@bonsai.sa</li>
+                        <li><i class="fa-solid fa-mobile"></i> +966 XX XXX XXXX</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Follow Us</h4>
+                    <div class="social-links">
+    <a href="#" class="icon instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" class="icon twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="#" class="icon linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="#" class="icon whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bonsai Residences. All rights reserved. Designed by Md Saiful.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+        }
+
+        // Form Submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your inquiry! We will contact you shortly.');
+            event.target.reset();
+        }
+
+        // Download Brochure
+        function downloadBrochure() {
+            // In production, this would trigger actual PDF download
+            alert('Brochure download will begin shortly. Thank you for your interest in Bonsai Residences!');
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    const nav = document.getElementById('mainNav');
+                    nav.classList.remove('active');
+                }
+            });
+        });
+
+        // Header background on scroll
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+
+</body>
+</html>
